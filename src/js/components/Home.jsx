@@ -15,7 +15,7 @@ const Home = () => {
 	}
 	const add = (event) => {
 	if (event.key === 'Enter') {
-		if (task !== '') { // 🔹 solo agrega si el input no está vacío
+		if (task !== '') {
 			setList([...list, task]);
 			setTask('');
 		}
@@ -37,7 +37,9 @@ const Home = () => {
 	return (
 		<div className="text-center mt-4">
 			<div className='container' style={{ width: '30rem' }}>
-				<h1 className='fw-light'>todos</h1>
+				<div  className='fw-light fs-1'>
+					<p>todos</p>
+				</div>
 				<div className="card mx-4" id="paper">
 					<input type="text" className="form-control" onChange={getTask} value={task} onKeyDown={add} placeholder="What needs to be done?" />
 					<ul className="list-group list-group-flush ">
